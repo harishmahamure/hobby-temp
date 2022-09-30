@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 import { Product } from '../types'
 import { getProductList } from './actions'
 
-interface Cart extends Product {
+export interface ICart extends Product {
   count: 0
 }
 interface InitialState {
   products: Product[]
-  cartItems: Cart[]
+  cartItems: ICart[]
 }
 const initialState: InitialState = {
   products: [],
@@ -29,6 +29,34 @@ const productSlice = createSlice({
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== action.payload)
       }
+    },
+    incrementProductCartCount: (state, action) => {
+      return {
+        ...state,
+        cartItems: state.cartItems.map(item => {
+          if (item.id === action.payload) {
+            return {
+              ...item,
+              count: item.count + 1
+            }
+          }
+          return item
+        })
+      }
+    },
+    decrementProductCartCount: (state, action) => {
+      return {
+        ...state,
+        cartItems: state.cartItems.map(item => {
+          if (item.id === action.payload) {
+            return {
+              ...item,
+              count: item.count - 1
+            }
+          }
+          return item
+        }).filter(item => item.count > 0)
+      }
     }
   },
   extraReducers: (builder) => {
@@ -41,6 +69,6 @@ const productSlice = createSlice({
   }
 })
 
-export const { addToCart, removeFromCart } = productSlice.actions
+export const { addToCart, removeFromCart, decrementProductCartCount, incrementProductCartCount } = productSlice.actions
 
 export default productSlice.reducer

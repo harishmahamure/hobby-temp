@@ -1,4 +1,2 @@
 
-export interface CheckoutPageParamsList {
-  cartId: string
-}
+export type CheckoutPageParamsList = undefined

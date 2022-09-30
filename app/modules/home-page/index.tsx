@@ -1,7 +1,7 @@
 import { View, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react'
 import { useHomePage } from './hooks'
-import { Text } from '../../components'
+import { Header, Text } from '../../components'
 import styles from './styles'
 import { primary, white } from '../../constants/colors'
 
@@ -13,6 +13,8 @@ const HomePage = (): JSX.Element => {
     handleRemoveProductPress
   } = useHomePage()
   return (
+<>
+    <Header cartItems={cartItems} />
     <FlatList
       data={products}
       renderItem={({ item }) => {
@@ -54,6 +56,7 @@ const HomePage = (): JSX.Element => {
         )
       }}
     />
+    </>
   )
 }
 

@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../components/hooks'
 import { getProductList } from './redux/actions'
 import { Product } from './types'
-import { addToCart, removeFromCart } from './redux/reducer'
+import { addToCart, ICart, removeFromCart } from './redux/reducer'
 interface IHomePageHooksReturnProps {
   handleAddToProductPress: (product: Product) => void
   products: Product[]
-  cartItems: Product[]
+  cartItems: ICart[]
   handleRemoveProductPress: (id: number) => void
 }
 
