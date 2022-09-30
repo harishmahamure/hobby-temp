@@ -24,7 +24,7 @@ const Header = (props: NativeStackHeaderProps): React.ReactNode => {
             <View style={styles.cartContainer}>
             {(route.name.toLowerCase() !== 'checkout') && (
               <>
-                <TouchableOpacity disabled={true}>
+                <TouchableOpacity disabled={true} >
                   <Ionicons name='cart-sharp' size={32} color={white}/>
                   <View style={styles.badge}>
                     <Badge size={20} style={{ backgroundColor: white, color: black }}>

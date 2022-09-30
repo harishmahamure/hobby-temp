@@ -7,6 +7,7 @@ const HomePage = (): JSX.Element => {
   const handleCheckoutPress = (): void => {
     navigation.navigate('Checkout', { cartId: 'harish' })
   }
+
   return (
     <View>
       <TouchableOpacity onPress={handleCheckoutPress}>
