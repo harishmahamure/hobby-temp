@@ -4,5 +4,5 @@ import { Product } from '../types/index'
 
 export const getProductList = createAsyncThunk('products/list', async () => {
   const data = await fetch(baseURL)
-  return await data.json() as Product[]
+  return (await data.json()) as Product[]
 })

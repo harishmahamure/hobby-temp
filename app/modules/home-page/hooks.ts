@@ -12,12 +12,10 @@ interface IHomePageHooksReturnProps {
 
 export const useHomePage = (): IHomePageHooksReturnProps => {
   const dispatch = useAppDispatch()
-  const { products, cartItems } = useAppSelector(st => st.product)
-  console.log(cartItems)
+  const { products, cartItems } = useAppSelector((st) => st.product)
   useEffect(() => {
     dispatch(getProductList())
   }, [])
-
   const handleAddToProductPress = (product: Product): void => {
     dispatch(addToCart(product))
   }

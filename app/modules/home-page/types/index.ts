@@ -1,4 +1,3 @@
-
 export type HomePageNavParams = undefined
 
 export interface Product {
