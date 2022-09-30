@@ -18,7 +18,7 @@ const productSlice = createSlice({
     addToCart: (state, action) => {
       return {
         ...state,
-        cartItems: [...state.cartItems, ...action.payload]
+        cartItems: [...state.cartItems, action.payload]
       }
     },
     removeFromCart: (state, action) => {

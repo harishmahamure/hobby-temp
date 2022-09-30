@@ -18,6 +18,6 @@ module.exports = {
     'react'
   ],
   rules: {
-
+    '@typescript-eslint/no-floating-promises': [0]
   }
 }
