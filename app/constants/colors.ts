@@ -1,0 +1,6 @@
+export const white = '#fff'
+export const primary = '#ff00a1'
+export const black = '#000'
+export const lightWhite = 'rgba(255,255,255,0.8)'
+export const lightBlack = 'rgba(0,0,0,0.1)'
+export const secondary = '#ff00e0'
