@@ -1,4 +1,4 @@
-import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
+import { FlatList, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { Header, Text } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../components/hooks'
