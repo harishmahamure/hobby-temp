@@ -1,4 +1,3 @@
-
 import { StyleProp, Text, TextProps, TextStyle } from 'react-native'
 import React from 'react'
 
@@ -9,15 +8,19 @@ interface IProps extends TextProps {
   style?: StyleProp<TextStyle>
 }
 
-const TextViewEnhanced: React.FC<IProps> = ({ color, size, children, weight, style, ...props }): JSX.Element => {
+const TextViewEnhanced: React.FC<IProps> = ({
+  color,
+  size,
+  children,
+  weight,
+  style,
+  ...props
+}): JSX.Element => {
   return (
     <Text
-    {...props}
-    maxFontSizeMultiplier={1.2}
-    style={[
-      { fontSize: size, color, fontWeight: weight },
-      style
-    ]}
+      {...props}
+      maxFontSizeMultiplier={1.2}
+      style={[{ fontSize: size, color, fontWeight: weight }, style]}
     >
       {children}
     </Text>
