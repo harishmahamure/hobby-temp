@@ -1,10 +1,7 @@
 
 import React from 'react'
 import { HomePage, CheckoutPage } from '../modules'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { IStackNavigatorTypes } from './types'
-
-const Stack = createNativeStackNavigator<IStackNavigatorTypes>()
+import { Stack } from './types'
 
 const AppStack = (): JSX.Element => {
   return (
