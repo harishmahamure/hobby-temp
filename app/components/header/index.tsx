@@ -12,21 +12,21 @@ const Header = ({ cartItems }: { cartItems: ICart[] }): JSX.Element => {
   const { canGoBack, goBack, navigate } = useNavigation()
   const { name } = useRoute()
   return (
-    <View data-testID="components-header-index-view-1" style={styles.container}>
+    <View testID="components-header-index-view-1" style={styles.container}>
       <Text
-        data-testID="components-header-index-text-2"
+        testID="components-header-index-text-2"
         size={20}
         color={white}
         weight="bold"
       >
         {canGoBack() && (
           <TouchableOpacity
-            data-testID="header-touchable-componentsview-3"
+            testID="header-touchable-componentsview-3"
             style={{ paddingHorizontal: 10 }}
             onPress={goBack}
           >
             <Ionicons
-              data-testID="components-header-iconicons-4"
+              testID="components-header-iconicons-4"
               name="md-return-down-back"
               size={20}
             />
@@ -34,23 +34,23 @@ const Header = ({ cartItems }: { cartItems: ICart[] }): JSX.Element => {
         )}
         {name}
       </Text>
-      <View data-testID="components-header-view-5" style={styles.cartContainer}>
+      <View testID="components-header-view-5" style={styles.cartContainer}>
         {cartItems.length > 0 && (
             <TouchableOpacity
-              data-testID="components-header-touchable-6"
+              testID="components-header-touchable-6"
               onPress={() => {
                 navigate('Checkout')
               }}
             >
               <Ionicons
-                data-testID="components-header-icon-7"
+                testID="components-header-icon-7"
                 name="cart-sharp"
                 size={32}
                 color={white}
               />
-              <View data-testID="components-header-view-8" style={styles.badge}>
+              <View testID="components-header-view-8" style={styles.badge}>
                 <Badge
-                  data-testID="components-header-badge-9"
+                  testID="components-header-badge-9"
                   size={20}
                   style={{ backgroundColor: white, color: black }}
                 >

@@ -4,7 +4,7 @@ import { ICart } from '../../../modules/home-page/redux/reducer'
 import { testRenderer } from '../../../test-utils'
 import Header from '../index'
 
-const mock = [
+export const MOCK = [
   {
     id: 1,
     count: 1,
@@ -50,11 +50,5 @@ describe('Text component', () => {
     const icon = queryByTestId('components-header-iconicons-4')
     expect(element).toBeNull()
     expect(icon).toBeNull()
-  })
-
-  it('Fires event when items added into the cart', () => {
-    const { queryByTestId } = testRenderer(<MockComponentWithNav cartItems={mock} />)
-    const element = queryByTestId('components-header-touchable-6"')
-    expect(element).not.toBeNull()
   })
 })
