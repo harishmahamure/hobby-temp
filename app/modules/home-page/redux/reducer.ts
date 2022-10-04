@@ -3,7 +3,7 @@ import { Product } from '../types'
 import { getProductList } from './actions'
 
 export interface ICart extends Product {
-  count: 0
+  count: number
 }
 interface InitialState {
   products: Product[]

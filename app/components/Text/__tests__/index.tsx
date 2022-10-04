@@ -6,7 +6,7 @@ import { TEXTID } from '../../../constants/test-constants'
 describe('Text component', () => {
   const children = 'Harish'
   it('renders the correct text', () => {
-    const { queryByTestId } = testRenderer(<TextEnhanced data-testID="generate-testId.jsTextEnhanced-0">{children} </TextEnhanced>)
+    const { queryByTestId } = testRenderer(<TextEnhanced>{children} </TextEnhanced>)
     const text = queryByTestId(TEXTID)
     expect(text).toBeInTheDocument()
     expect(text).toHaveTextContent(children)

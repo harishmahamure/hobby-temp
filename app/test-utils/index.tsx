@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
-import { render } from '@testing-library/react'
-import type { RenderOptions } from '@testing-library/react'
+import { render } from '@testing-library/react-native'
+import type { RenderOptions } from '@testing-library/react-native'
 import { configureStore } from '@reduxjs/toolkit'
 import type { PreloadedState } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
@@ -21,7 +21,7 @@ export function testRenderer (
   }: ExtendedRenderOptions = {}
 ) {
   function Wrapper ({ children }: PropsWithChildren<{}>): JSX.Element {
-    return <Provider store={store} data-testId="Provider-0">{children}</Provider>
+    return <Provider store={store}>{children}</Provider>
   }
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
 }

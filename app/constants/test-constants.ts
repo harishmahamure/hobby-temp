@@ -1,1 +1,1 @@
-export const TEXTID = 'Text-Component-Text-1'
+export const TEXTID = 'component-text-text-1'
