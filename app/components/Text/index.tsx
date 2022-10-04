@@ -1,5 +1,6 @@
-import { StyleProp, Text, TextProps, TextStyle } from 'react-native'
 import React from 'react'
+import { StyleProp, Text, TextProps, TextStyle } from 'react-native'
+import { TEXTID } from '../../constants/test'
 
 interface IProps extends TextProps {
   size?: number
@@ -18,6 +19,7 @@ const TextViewEnhanced: React.FC<IProps> = ({
 }): JSX.Element => {
   return (
     <Text
+      data-testID={TEXTID}
       {...props}
       maxFontSizeMultiplier={1.2}
       style={[{ fontSize: size, color, fontWeight: weight }, style]}

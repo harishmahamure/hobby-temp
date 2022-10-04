@@ -33,6 +33,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx', '.ts'] }],
     '@typescript-eslint/no-floating-promises': [0],
     'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error'
+    'react/jsx-uses-vars': 'error',
+    '@typescript-eslint/explicit-function-return-type': [0]
   }
+
 }
