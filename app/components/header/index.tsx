@@ -12,26 +12,28 @@ const Header = ({ cartItems }: { cartItems: ICart[] }): JSX.Element => {
   const { canGoBack, goBack, navigate } = useNavigation()
   const { name } = useRoute()
   return (
-    <View data-testID='Header-View-1' style={styles.container}>
-      <Text data-testID='Header-View-1-Text-1' size={20} color={white} weight="bold">
+    <View data-testID='components-header-index-view-1' style={styles.container}>
+      <Text data-testID='components-header-index-text-2' size={20} color={white} weight="bold">
         {canGoBack() && (
-          <TouchableOpacity data-testID='Header-View-1-Text-1-TouchableOpacity-1' style={{ paddingHorizontal: 10 }} onPress={goBack}>
-            <Ionicons name="md-return-down-back" size={20} />
+          <TouchableOpacity data-testID='components-header-touchable-view-3' style={{ paddingHorizontal: 10 }} onPress={goBack}>
+            <Ionicons data-testID='components-header-iconicons-4' name="md-return-down-back" size={20} />
           </TouchableOpacity>
         )}
         {name}
       </Text>
-      <View style={styles.cartContainer}>
+      <View data-testID='components-header-view-5' style={styles.cartContainer}>
         {cartItems.length > 0 && (
           <>
             <TouchableOpacity
+            data-testID='components-header-view-6'
               onPress={() => {
                 navigate('Checkout')
               }}
             >
-              <Ionicons name="cart-sharp" size={32} color={white} />
-              <View style={styles.badge}>
+              <Ionicons data-testID='components-header-icon-7' name="cart-sharp" size={32} color={white} />
+              <View data-testID='components-header-view-8' style={styles.badge}>
                 <Badge
+                  data-testID='components-header-badge-9'
                   size={20}
                   style={{ backgroundColor: white, color: black }}
                 >

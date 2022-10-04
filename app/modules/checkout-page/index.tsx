@@ -29,10 +29,9 @@ const CheckoutPage = (): JSX.Element => {
   return (
     <FlatList
       data={cartItems}
-      ListHeaderComponent={<Header cartItems={cartItems} />}
+      ListHeaderComponent={<Header data-testID="modules-checkout-page-Header-1" cartItems={cartItems} />}
       ListFooterComponent={() => (
-        <Text size={24} weight="800">
-          Your total is {total}
+        <Text size={24} weight="800" data-testID="modules-checkout-page-Text-2">Your total is{total}
         </Text>
       )}
       renderItem={({ item }) => {
@@ -40,33 +39,41 @@ const CheckoutPage = (): JSX.Element => {
         return (
           <View
             style={{ flex: 1, paddingHorizontal: 20, marginHorizontal: 20 }}
-          >
-            <Text size={20} weight="600" color={black}>
+            data-testID="modules-checkout-page-View-3">
+            <Text
+              size={20}
+              weight="600"
+              color={black}
+              data-testID="modules-checkout-page-Text-4">
               {name}
             </Text>
-            <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }} data-testID="modules-checkout-page-View-5">
               <TouchableOpacity
                 onPress={() => dispatch(decrementProductCartCount(id))}
-              >
-                <Text size={20} weight="bold" style={{ paddingRight: 20 }}>
-                  -
-                </Text>
+                data-testID="modules-checkout-page-TouchableOpacity-6">
+                <Text
+                  size={20}
+                  weight="bold"
+                  style={{ paddingRight: 20 }}
+                  data-testID="modules-checkout-page-Text-7">-</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => dispatch(incrementProductCartCount(id))}
-              >
-                <Text size={20} weight="bold">
-                  +
-                </Text>
+                data-testID="modules-checkout-page-TouchableOpacity-8">
+                <Text size={20} weight="bold" data-testID="modules-checkout-page-Text-9">+</Text>
               </TouchableOpacity>
             </View>
-            <Text size={20} weight="bold" color={primary}>
+            <Text
+              size={20}
+              weight="bold"
+              color={primary}
+              data-testID="modules-checkout-page-Text-10">
               {count}
             </Text>
           </View>
         )
       }}
-    />
+      />
   )
 }
 

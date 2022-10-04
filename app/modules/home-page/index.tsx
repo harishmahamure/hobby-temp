@@ -21,25 +21,28 @@ const HomePage = (): JSX.Element => {
         const { id, colour, img, name, price } = item
         const presentInCart = cartItems.findIndex((value) => value.id === id)
         return (
-          <View key={id} style={styles.container}>
-            <View style={styles.imageContainer}>
+          <View data-testID='modules-homepage-view-1' key={id} style={styles.container}>
+            <View data-testID='modules-homepage-view-2' style={styles.imageContainer}>
               <Image
+                data-testID='modules-homepage-image-3'
                 source={{ uri: img }}
                 style={styles.image}
                 resizeMode="contain"
               />
             </View>
-            <View style={{ flex: 3 }}>
-              <Text size={22} weight="400">
+            <View data-testID='modules-homepage-view-4' style={{ flex: 3 }}>
+              <Text data-testID='modules-homepage-text-5' size={22} weight="400">
                 {name}
               </Text>
-              <Text size={20} weight="bold" color={primary}>
+              <Text data-testID='modules-homepage-text-6' size={20} weight="bold" color={primary}>
                 &#x20b9;{price}
               </Text>
               <TouchableOpacity
+              data-testID='modules-homepage-touchable-7'
                 style={[styles.colorButton, { backgroundColor: colour }]}
               />
               <TouchableOpacity
+               data-testID='modules-homepage-touchable-8'
                 onPress={() => {
                   presentInCart === -1
                     ? handleAddToProductPress(item)
@@ -47,7 +50,7 @@ const HomePage = (): JSX.Element => {
                 }}
                 style={styles.button}
               >
-                <Text color={white} weight="600">
+                <Text data-testID='modules-homepage-text-9' color={white} weight="600">
                   {presentInCart !== -1 ? 'Remove' : ' Add to cart'}
                 </Text>
               </TouchableOpacity>

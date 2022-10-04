@@ -11,7 +11,7 @@
     "test": "jest --silent",
     "test:watch": "jest --silent --watch",
     "test:coverage": "jest --silent --collectCoverage",
-    "codemod-testId": " jscodeshift --parser=tsx -ignore-pattern=__tests__/**/*.tsx -t  ./scripts/generate-testId.js app/**/*.tsx"
+    "codemod-testId": " jscodeshift --parser=tsx -t  ./scripts/generate-testId.js app/**/*.tsx"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.0",
