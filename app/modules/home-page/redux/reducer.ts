@@ -33,7 +33,7 @@ const productSlice = createSlice({
     incrementProductCartCount: (state, action) => {
       return {
         ...state,
-        cartItems: state.cartItems.map(item => {
+        cartItems: state.cartItems.map((item) => {
           if (item.id === action.payload) {
             return {
               ...item,
@@ -47,15 +47,17 @@ const productSlice = createSlice({
     decrementProductCartCount: (state, action) => {
       return {
         ...state,
-        cartItems: state.cartItems.map(item => {
-          if (item.id === action.payload) {
-            return {
-              ...item,
-              count: item.count - 1
+        cartItems: state.cartItems
+          .map((item) => {
+            if (item.id === action.payload) {
+              return {
+                ...item,
+                count: item.count - 1
+              }
             }
-          }
-          return item
-        }).filter(item => item.count > 0)
+            return item
+          })
+          .filter((item) => item.count > 0)
       }
     }
   },
@@ -69,6 +71,11 @@ const productSlice = createSlice({
   }
 })
 
-export const { addToCart, removeFromCart, decrementProductCartCount, incrementProductCartCount } = productSlice.actions
+export const {
+  addToCart,
+  removeFromCart,
+  decrementProductCartCount,
+  incrementProductCartCount
+} = productSlice.actions
 
 export default productSlice.reducer
