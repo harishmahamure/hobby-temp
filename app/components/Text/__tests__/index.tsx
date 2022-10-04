@@ -1,7 +1,7 @@
 import React from 'react'
 import { testRenderer } from '../../../test-utils'
 import TextEnhanced from '../index'
-import { TEXTID } from '../../../constants/test'
+import { TEXTID } from '../../../constants/test-constants'
 
 describe('Text component', () => {
   const children = 'Harish'

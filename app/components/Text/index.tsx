@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleProp, Text, TextProps, TextStyle } from 'react-native'
-import { TEXTID } from '../../constants/test'
+import { TEXTID } from '../../constants/test-constants'
 
 interface IProps extends TextProps {
   size?: number
@@ -34,5 +34,6 @@ export default TextViewEnhanced
 TextViewEnhanced.defaultProps = {
   color: 'black',
   size: 14,
-  weight: 'normal'
+  weight: 'normal',
+  style: {}
 }

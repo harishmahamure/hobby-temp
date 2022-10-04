@@ -12,10 +12,10 @@ const Header = ({ cartItems }: { cartItems: ICart[] }): JSX.Element => {
   const { canGoBack, goBack, navigate } = useNavigation()
   const { name } = useRoute()
   return (
-    <View style={styles.container}>
-      <Text size={20} color={white} weight="bold">
+    <View data-testID='Header-View-1' style={styles.container}>
+      <Text data-testID='Header-View-1-Text-1' size={20} color={white} weight="bold">
         {canGoBack() && (
-          <TouchableOpacity style={{ paddingHorizontal: 10 }} onPress={goBack}>
+          <TouchableOpacity data-testID='Header-View-1-Text-1-TouchableOpacity-1' style={{ paddingHorizontal: 10 }} onPress={goBack}>
             <Ionicons name="md-return-down-back" size={20} />
           </TouchableOpacity>
         )}
