@@ -8,14 +8,14 @@ jest.mock('@react-navigation/native', () => {
     useRoute: jest.fn()
   }
 })
+
 jest.mock('@react-navigation/native', () => {
   return {
-    useNavigation: () => ({ setOptions: jest.fn() }),
-    useRoute: () => ({ params: {} }),
+    createNativeStackNavigator: jest.fn(),
     createNavigatorFactory: jest.fn()
+
   }
-}
-)
+})
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper')
 
 jest.mock('react-native-reanimated', () => {
