@@ -3,6 +3,7 @@ import { Config } from '@jest/types'
 const config: Config.InitialOptions = {
   rootDir: './',
   preset: 'jest-expo',
+  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', './app/test-utils/test-setup.ts'],
   testEnvironment: 'jsdom',
   transformIgnorePatterns: [

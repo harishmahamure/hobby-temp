@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
 import { ICart } from '../../../modules/home-page/redux/reducer'
 import { testRenderer } from '../../../test-utils'
@@ -30,22 +31,30 @@ export const MOCK = [
     img: 'https://cdn-img.prettylittlething.com/d/c/3/3/dc337260f9ecefdb99a8c8e98cd73ccb1b79cea5_cmb6804_4.jpg?imwidth=1024'
   }
 ]
+const Stack = createNativeStackNavigator()
 
 const MockComponentWithNav = ({ cartItems }: { cartItems: ICart[] }) => (
-    <NavigationContainer>
-        <Header cartItems={cartItems} />
-    </NavigationContainer>
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={() => <Header cartItems={[]} />} />
+    </Stack.Navigator>
+    <Header cartItems={cartItems} />
+  </NavigationContainer>
 )
 
 describe('Text component', () => {
   it('Doesnot renders cart items when cart items not present', () => {
-    const { queryByTestId } = testRenderer(<MockComponentWithNav cartItems={[]} />)
+    const { queryByTestId } = testRenderer(
+      <MockComponentWithNav cartItems={[]} />
+    )
     const element = queryByTestId('components-header-view-6')
     expect(element).toBeNull()
   })
 
   it('Doesnot renders back button when back is not available', () => {
-    const { queryByTestId } = testRenderer(<MockComponentWithNav cartItems={[]} />)
+    const { queryByTestId } = testRenderer(
+      <MockComponentWithNav cartItems={[]} />
+    )
     const element = queryByTestId('header-touchable-componentsview-3')
     const icon = queryByTestId('components-header-iconicons-4')
     expect(element).toBeNull()
