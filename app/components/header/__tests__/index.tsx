@@ -31,13 +31,13 @@ export const MOCK = [
     img: 'https://cdn-img.prettylittlething.com/d/c/3/3/dc337260f9ecefdb99a8c8e98cd73ccb1b79cea5_cmb6804_4.jpg?imwidth=1024'
   }
 ]
-const Stack = createNativeStackNavigator()
+const { Navigator, Screen } = createNativeStackNavigator()
 
 const MockComponentWithNav = ({ cartItems }: { cartItems: ICart[] }) => (
   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={() => <Header cartItems={[]} />} />
-    </Stack.Navigator>
+    <Navigator>
+      <Screen name="Home" component={() => <Header cartItems={[]} />} />
+    </Navigator>
     <Header cartItems={cartItems} />
   </NavigationContainer>
 )
